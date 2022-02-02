@@ -2,11 +2,10 @@ const gridContainer = document.querySelector('#gridContainer');
 
 const resetButton = document.getElementById('resetButton');
 
-let defaultSquares=256;
 
-function makeGrid(){
+function makeGrid(numberOfSquares){
 
-    for (i = 0; i<defaultSquares; i++){
+    for (let i = 0; i<numberOfSquares; i++){
         let grids = document.createElement('div');
         grids.style.border='1px solid brown';
         grids.style.width= '30px';
@@ -20,13 +19,33 @@ function makeGrid(){
         
         grids.addEventListener("mouseover", changeColor);
 
-        resetButton.addEventListener("click", ()=> {
-            gridContainer.removeChild(grids);
-            })
-
+resetButton.addEventListener("click", ()=>{
+    grids.style.backgroundColor= "rgb(206, 198, 198)";
+})
+ 
     }
+
 }
 
-makeGrid();
+/* work in progress
 
+function newGridFunction(newGrid){
+    newGrid = prompt("How many squares per side? (Max 100)");
+        if(newGrid<=100){
+        newGrid*=newGrid;
+            for (let i = 0; i<newGrid; i++){
+            let newSquares = document.createElement('div');
+            newSquares.style.border='1px solid brown';
+            newSquares.style.width= 'auto';
+            newSquares.classList.add('square');
+            gridContainer.appendChild(newSquares);
+        }}else if(newGrid>100){
+            alert("Please enter a valid number.")
+        }else{
+            alert("Please enter a number.");
+        }
+    }  
 
+    */
+
+makeGrid(256);
