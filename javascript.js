@@ -19,13 +19,13 @@ function makeGrid(numberOfSquares){
         
         grids.addEventListener("mouseover", changeColor);
 
-resetButton.addEventListener("click", ()=>{
-    grids.style.backgroundColor= "rgb(206, 198, 198)";
-})
- 
     }
 
 }
+
+resetButton.addEventListener("click", ()=>{
+    gridContainer.replaceChildren();
+})
 
 /* work in progress
 
@@ -39,6 +39,9 @@ function newGridFunction(newGrid){
             newSquares.style.width= 'auto';
             newSquares.classList.add('square');
             gridContainer.appendChild(newSquares);
+            const changeColor2 = () => {
+            square.style.backgroundColor= 'black';
+            grids.addEventListener("mouseover", changeColor);
         }}else if(newGrid>100){
             alert("Please enter a valid number.")
         }else{
