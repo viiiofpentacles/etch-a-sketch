@@ -10,7 +10,6 @@ function makeGrid(numberOfSquares){
         grids.style.border='1px solid brown';
         grids.style.width= '30px';
         grids.style.height= '30px';
-        grids.classList.add('square');
         gridContainer.appendChild(grids);
 
         const changeColor = () => {
@@ -25,30 +24,37 @@ function makeGrid(numberOfSquares){
 
 resetButton.addEventListener("click", ()=>{
     gridContainer.replaceChildren();
+    newGridFunction();
 })
-
-/* work in progress
 
 function newGridFunction(newGrid){
     newGrid = prompt("How many squares per side? (Max 100)");
         if(newGrid<=100){
-        newGrid*=newGrid;
-            for (let i = 0; i<newGrid; i++){
+        let squareNumber =newGrid**2;
+            for (let i = 0; i<squareNumber; i++){
             let newSquares = document.createElement('div');
             newSquares.style.border='1px solid brown';
-            newSquares.style.width= 'auto';
-            newSquares.classList.add('square');
+            newSquares.style.width='5px';
+            newSquares.style.height='5px';
+            newSquares.style.flex='1 1 auto';
+            newSquares.style.display = 'flex';
+            newSquares.style.justifyContent = 'center';
+            newSquares.style.alignItems = 'center';
+            newSquares.style.boxSizing = 'border-box';
             gridContainer.appendChild(newSquares);
+            
             const changeColor2 = () => {
-            square.style.backgroundColor= 'black';
-            grids.addEventListener("mouseover", changeColor);
+            newSquares.style.backgroundColor= 'black';
+            }
+            newSquares.addEventListener("mouseover", changeColor2);
         }}else if(newGrid>100){
             alert("Please enter a valid number.")
         }else{
             alert("Please enter a number.");
         }
+        
     }  
 
-    */
+
 
 makeGrid(256);
