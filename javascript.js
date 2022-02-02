@@ -34,15 +34,14 @@ function newGridFunction(newGrid){
             for (let i = 0; i<squareNumber; i++){
             let newSquares = document.createElement('div');
             newSquares.style.border='1px solid brown';
-            newSquares.style.width='5px';
-            newSquares.style.height='5px';
+            newSquares.style.width= (512/newGrid)-2 + 'px';
+            newSquares.style.height= (512/newGrid)-2 + 'px';
             newSquares.style.flex='1 1 auto';
             newSquares.style.display = 'flex';
             newSquares.style.justifyContent = 'center';
             newSquares.style.alignItems = 'center';
-            newSquares.style.boxSizing = 'border-box';
+            newSquares.style.boxSizing = 'content-box';
             gridContainer.appendChild(newSquares);
-            
             const changeColor2 = () => {
             newSquares.style.backgroundColor= 'black';
             }
