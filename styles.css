@@ -1,8 +1,8 @@
 body{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding:30px;
     background-color: #e7d8d2;
 }
 
@@ -12,4 +12,9 @@ body{
     width: 512px;
     height:512px;
     border: 5px solid maroon;
+    background-color: rgb(206, 198, 198);
+}
+
+#resetButton{
+    margin: 25px;
 }
