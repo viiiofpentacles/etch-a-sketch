@@ -1,0 +1,15 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:30px;
+    background-color: #e7d8d2;
+}
+
+#gridContainer{
+    display: flex;
+    flex-wrap: wrap;
+    width: 512px;
+    height:512px;
+    border: 5px solid maroon;
+}
